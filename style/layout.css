@@ -7,8 +7,8 @@ body {
 #navigationDiv {
     display: table;
     border-spacing: 10px;
-    width: 30%;
-    border: solid;
+    width: 50%;
+    border: none;
     margin: auto;
     border-radius: 5px;
 }
@@ -16,7 +16,7 @@ body {
 #searchResultsDiv {
     width: 80%;
     border: solid;
-    height: 580px;
+    height: 600px;
     margin: auto;
     margin-bottom: 20px;
     overflow: auto;
@@ -42,13 +42,12 @@ body {
     border: none;
 }
 
-#navigationDivRow {
-    display: table-row;
+#searchTextBox:focus {
+    outline: none;
 }
 
-.tableColumn {
-     display: table-cell;
-     width: 33.33%;
+#navigationDivRow {
+    display: table-row;
 }
 
 #leftDiv {
@@ -61,6 +60,11 @@ body {
 
 #messageDiv {
     text-align: center;
+}
+
+.tableColumn {
+     display: table-cell;
+     width: 33.33%;
 }
 
 .resultItem {
@@ -78,5 +82,17 @@ body {
 }
 
 .navigationButton {
-    width: 35%;
+    width: 45%;
+}
+
+.resultTitle a:link {
+    color: #0628ad;
+}
+
+.resultTitle a:visited {
+    color: #e01b0d
+}
+
+.resultTitle a:hover {
+    color: #28292b;
 }

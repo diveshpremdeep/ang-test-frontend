@@ -61,13 +61,15 @@ function setup() {
 
         // Add each search result as an independent paragraph within the search results box.
         $.each(results, function(i, res) {
+            let url = res.url || "";
+            let title = res.title;
             $("#searchResultsDiv").append(`
                 <div class="resultItem">
                     <div class="resultTitle">
-                        <a href="${res.url}" target="_blank">${res.title}</a>
+                        <a href="${url}" target="_blank">${title}</a>
                     </div>
                     <div class="resultLink">
-                        <span>${res.url}</span>
+                        <span>${url}</span>
                     </div>
                 </div>
             `);
