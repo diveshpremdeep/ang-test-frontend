@@ -9,11 +9,9 @@ function setup() {
     $("#pageMessage").text("");
 
     // Register a handler for changes in the search text to call the search Api.
-    // Note - this will only trigger after the search box loses focus...
-    $("#searchTextBox").change(function(e) {
+    $("#searchTextBox").on('input propertychange paste', function(e) {
         currentPageNumber = 0;
         searchAndDisplay(currentPageNumber);
-        $("#pageMessage").text("");
     });
 
     $("#previous").click(function() {
@@ -32,6 +30,7 @@ function setup() {
         if (query === "") {
             $("#searchResultsDiv").text("");
             $(".navigationButton").prop("disabled", true);
+            $("#pageMessage").text("");
             return;
         }
 

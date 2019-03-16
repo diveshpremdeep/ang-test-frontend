@@ -28,7 +28,7 @@ body {
 
 #searchBoxDiv {
     width: 80%;
-    border: solid;
+    border: none;
     margin: auto;
     margin-bottom: 20px;
     border-radius: 5px;
