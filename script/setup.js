@@ -1,19 +1,19 @@
 // The page number to get search results for. This is mutated as we navigate through results.
 // Pages in the search API start from zero.
-// Is there a better way to do this?
+// Is there a better way to do this instead of maintaining a global mutable variable?
 var currentPageNumber = 0;
 
 function setup() {
     // All search result navigation buttons are disabled by default.
     $(".navigationButton").prop("disabled", true);
-    $("#pageMessage").hide();
+    $("#pageMessage").text("");
 
     // Register a handler for changes in the search text to call the search Api.
     // Note - this will only trigger after the search box loses focus...
     $("#searchTextBox").change(function(e) {
         currentPageNumber = 0;
         searchAndDisplay(currentPageNumber);
-        $("#pageMessage").hide();
+        $("#pageMessage").text("");
     });
 
     $("#previous").click(function() {
@@ -61,7 +61,7 @@ function setup() {
 
         // Add each search result as an independent paragraph within the search results box.
         $.each(results, function(i, res) {
-            $("#searchResultsDiv").append("<p>" + res + "</p>");
+            $("#searchResultsDiv").append('<span class="resultItem">' + res + '</span><br>');
         });
     }
 

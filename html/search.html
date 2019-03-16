@@ -1,26 +1,33 @@
-<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="../style/layout.css">
         <script src="../script/jquery-3.3.1.min.js"></script>
         <script src="../script/setup.js"></script>
         <script>
             $(document).ready(setup);
         </script>
     </head>
-
     <body>
         <div id="searchBoxDiv">
-            <textarea id="searchTextBox"></textarea>
+            <input id="searchTextBox" type="text">
         </div>
 
         <div id="searchResultsDiv">
         </div>
 
-        <div id="searchResultsNavigationDiv">
-            <input id="previous" class="navigationButton" type="button" value="Previous">
-            <span id="pageMessage"></span>
-            <input id="next" class="navigationButton" type="button" value="Next">
+        <div id="navigationDiv">
+            <div id="navigationDivRow">
+                <div id="leftDiv" class="tableColumn">
+                    <input type="button" id="previous" value="Left" class="navigationButton">
+                </div>
+                <div id="messageDiv" class="tableColumn">
+                    <span id="pageMessage"></span>
+                </div>
+                <div id="rightDiv" class="tableColumn">
+                    <input type="button" id="next" value="Right" class="navigationButton">
+                </div>
+            </div>
         </div>
     </body>
 </html>
