@@ -45,7 +45,7 @@ function setup() {
                 } else {
                     $("#previous").prop("disabled", false);
                 }
-                if (data.page == data.nbPages -1) {
+                if (data.page >= data.nbPages -1) {
                     $("#next").prop("disabled", true);
                 } else {
                     $("#next").prop("disabled", false);
