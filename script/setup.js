@@ -24,6 +24,8 @@ function setup() {
         searchAndDisplay(currentPageNumber);
     });
 
+    $("#searchTextBox").focus();
+
     // Searches and displays the results for page number.
     function searchAndDisplay(pageNumber) {
         let query = $("#searchTextBox").val();
