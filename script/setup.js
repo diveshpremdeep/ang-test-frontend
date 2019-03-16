@@ -37,7 +37,7 @@ function setup() {
 
         $.getJSON({url: constructSearchUrl(query, pageNumber)})
             .then(function(data){
-                let results = $.map(data.hits, function(hit) {return hit.title;});
+                let results = $.map(data.hits, function(hit) {return {title: hit.title, url: hit.url};});
                 populateSearchResults(results);
 
                 if (data.page == 0) {
@@ -61,7 +61,16 @@ function setup() {
 
         // Add each search result as an independent paragraph within the search results box.
         $.each(results, function(i, res) {
-            $("#searchResultsDiv").append('<span class="resultItem">' + res + '</span><br>');
+            $("#searchResultsDiv").append(`
+                <div class="resultItem">
+                    <div class="resultTitle">
+                        <a href="${res.url}" target="_blank">${res.title}</a>
+                    </div>
+                    <div class="resultLink">
+                        <span>${res.url}</span>
+                    </div>
+                </div>
+            `);
         });
     }
 
