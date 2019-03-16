@@ -77,7 +77,8 @@ function setup() {
     }
 
     function constructSearchUrl(query, pageNumber) {
-        return `https://hn.algolia.com/api/v1/search?query=${query}&tags=story&page=${pageNumber}`;
+        let encodedQuery = encodeURIComponent(query)
+        return `https://hn.algolia.com/api/v1/search?query=${encodedQuery}&tags=story&page=${pageNumber}`;
     }
 }
 
