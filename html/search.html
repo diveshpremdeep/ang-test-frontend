@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../script/jquery-3.3.1.min.js"></script>
+        <script src="../script/setup.js"></script>
+        <script>
+            $(document).ready(setup);
+        </script>
+    </head>
+
+    <body>
+        <div id="searchBoxDiv">
+            <textarea id="searchTextBox"></textarea>
+        </div>
+
+        <div id="searchResultsDiv">
+        </div>
+
+        <div id="searchResultsNavigationDiv">
+            <input id="previous" class="navigationButton" type="button" value="Previous">
+            <span id="pageMessage"></span>
+            <input id="next" class="navigationButton" type="button" value="Next">
+        </div>
+    </body>
+</html>
